@@ -119,7 +119,7 @@ export default function Home() {
           </div>
           <div className='border-t border-white/10 pt-8 text-center'>
             <p className='text-gray-400 text-sm'>
-              © 2024 NxComm. All rights reserved. Pioneering intelligent automation for the next generation of business.
+              © 2025 NxComm. All rights reserved. Pioneering intelligent automation for the next generation of business.
             </p>
           </div>
         </div>

@@ -106,7 +106,7 @@ export default function Features() {
                 </p>
               </div>
             </div>
-            <p className='text-lg text-gray-300 mb-12'>At Hunexus, we design systems that:</p>
+            <p className='text-lg text-gray-300 mb-12'>At HuNexus, we design systems that:</p>
           </div>
         </motion.div>
 
