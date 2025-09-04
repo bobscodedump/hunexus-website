@@ -7,15 +7,9 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ message: '' });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -96,29 +90,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <GlassCard className='p-8'>
-            <form onSubmit={handleSubmit} className='space-y-6'>
-              <div>
-                <Input
-                  type='text'
-                  name='name'
-                  placeholder='Your Name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className='backdrop-blur-xl bg-white/10 border border-white/20 text-white placeholder:text-gray-400 rounded-xl h-12 w-full px-4'
-                />
-              </div>
-              <div>
-                <Input
-                  type='email'
-                  name='email'
-                  placeholder='Your Email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className='backdrop-blur-xl bg-white/10 border border-white/20 text-white placeholder:text-gray-400 rounded-xl h-12 w-full px-4'
-                />
-              </div>
+            <div className='space-y-6'>
               <div>
                 <Textarea
                   name='message'
@@ -126,19 +98,19 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
+                  rows={8}
                   className='backdrop-blur-xl bg-white/10 border border-white/20 text-white placeholder:text-gray-400 rounded-xl resize-none w-full p-4'
                 />
               </div>
-              <Button
-                type='submit'
+              <a
+                href={`mailto:enquiry@huexus.co?subject=Enquiry from Website&body=${encodeURIComponent(formData.message)}`}
                 className='w-full h-12 backdrop-blur-xl bg-gradient-to-r from-cyan-400/20 to-purple-400/20 hover:from-cyan-400/30 hover:to-purple-400/30 text-white border border-white/30 rounded-xl font-semibold transition-all duration-500 shadow-2xl hover:shadow-cyan-500/25 flex items-center justify-center'
                 style={{ boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)' }}
               >
                 <Send className='w-5 h-5 mr-2' />
                 Send Message
-              </Button>
-            </form>
+              </a>
+            </div>
           </GlassCard>
         </div>
       </div>
