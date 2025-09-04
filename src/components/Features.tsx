@@ -35,9 +35,9 @@ export default function Features() {
   ];
 
   const clients = [
-    { name: 'Intel', logoUrl: 'https://logos-world.net/wp-content/uploads/2020/03/Intel-Logo.png' },
-    { name: 'Infineon', logoUrl: 'https://logos-world.net/wp-content/uploads/2021/02/Infineon-Logo.png' },
-    { name: 'Motorola', logoUrl: 'https://logos-world.net/wp-content/uploads/2020/04/Motorola-Logo.png' },
+    { name: 'Intel', logoUrl: '/intel.png' },
+    { name: 'Infineon', logoUrl: '/infineon.png' },
+    { name: 'Hi-P', logoUrl: '/hip.png' },
   ];
 
   return (
@@ -68,7 +68,6 @@ export default function Features() {
               src={client.logoUrl}
               alt={`${client.name} logo`}
               className='h-12 md:h-16 object-contain transition-opacity duration-300 opacity-70 hover:opacity-100'
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
           ))}
         </motion.div>
